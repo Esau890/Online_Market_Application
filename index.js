@@ -1,3 +1,7 @@
+//----------------------------------------------------------------------------------------->
+//----------------------------Esau Maldonado Aguiar 301267933------------------------------>
+//----------------------------------------------------------------------------------------->
+
 require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
@@ -10,13 +14,13 @@ app.use(express.json());
 app.use('/api', routes);
 
 app.get('/', (req, res) => {
-  res.send('Welcome to the main page of your API!');
+  res.send('Welcome to DressStore application.');
 });
 
 const connectToDatabase = async () => {
     try {
         await mongoose.connect(mongoString, { useNewUrlParser: true, useUnifiedTopology: true, dbName: 'Marketplace' });
-        console.log('MongoDB Connected to Marketplace Database');
+        console.log('Connected to Marketplace Database');
 
         app.listen(3000, () => {
             console.log(`Server Started at ${3000}`);
